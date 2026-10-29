@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0a1410">
   <meta name="description" content="Sei invitata ai 40 anni di Angela — venerdì 18 dicembre 2026, ore 20:00, Giallo Datterino, Villaricca.">
   <meta property="og:title" content="40 anni di Angela ✨">
-  <meta property="og:description" content="La settimana prima di Natale · venerdì 18 dicembre 2026 · ore 20:00 · Giallo Datterino, Villaricca. Apri l’invito e conferma.">
+  <meta property="og:description" content="Venerdì 18 dicembre 2026 · ore 20:00 · Giallo Datterino, Villaricca. Apri l’invito e conferma.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:url" content="https://pas163-crypto.github.io/angela-40-invito/">
@@ -104,9 +104,9 @@
     .envelope-card::after { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
 
     .wax {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 18px;
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 10px;
       border-radius: 50%;
       background:
         radial-gradient(circle at 35% 30%, #ff5a72, #d4183a 55%, #8a0f26 100%);
@@ -118,14 +118,25 @@
       animation: wax-pulse 2.8s ease-in-out infinite;
     }
 
-    .wax svg { width: 34px; height: 34px; }
+    .wax-num {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: #ffe7a8;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+      transform: translateY(1px);
+    }
 
     .envelope h1 {
       font-family: "Great Vibes", cursive;
       font-size: clamp(48px, 14vw, 64px);
       font-weight: 400;
-      line-height: 1;
-      margin-bottom: 6px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      padding: 0.22em 0.12em 0.06em;
+      overflow: visible;
       background: linear-gradient(180deg, #fff, #e8c97a);
       -webkit-background-clip: text;
       background-clip: text;
@@ -628,9 +639,7 @@
     <div class="envelope">
       <div class="envelope-card">
         <div class="wax" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none">
-            <path d="M20 6 L22.4 14.2 L31 14.2 L24.1 19.2 L26.6 27.4 L20 22.4 L13.4 27.4 L15.9 19.2 L9 14.2 L17.6 14.2 Z" fill="#ffe7a8"/>
-          </svg>
+          <span class="wax-num">40</span>
         </div>
         <h1 id="gate-title">Angela</h1>
         <p class="sub">Hai ricevuto un invito</p>
@@ -643,8 +652,6 @@
   <div class="invite" id="invite">
     <main class="wrap">
       <header class="hero">
-        <p class="eyebrow">La settimana prima di Natale</p>
-
         <div class="wreath-stage">
           <svg class="wreath" viewBox="0 0 340 340" aria-hidden="true">
             <defs>
