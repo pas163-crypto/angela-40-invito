@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1410">
+  <meta name="description" content="Sei invitata ai 40 anni di Angela — venerdì 18 dicembre 2026, ore 20:00, Giallo Datterino, Villaricca.">
+  <meta property="og:title" content="40 anni di Angela ✨">
+  <meta property="og:description" content="La settimana prima di Natale · venerdì 18 dicembre 2026 · ore 20:00 · Giallo Datterino, Villaricca. Apri l’invito e conferma.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:url" content="https://pas163-crypto.github.io/angela-40-invito/">
+  <meta property="og:image" content="https://pas163-crypto.github.io/angela-40-invito/og-preview.png">
+  <meta property="og:image:secure_url" content="https://pas163-crypto.github.io/angela-40-invito/og-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Invito: 40 anni di Angela — 18 dicembre 2026">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="40 anni di Angela ✨">
+  <meta name="twitter:description" content="Venerdì 18 dicembre 2026 · ore 20:00 · Giallo Datterino, Villaricca">
+  <meta name="twitter:image" content="https://pas163-crypto.github.io/angela-40-invito/og-preview.png">
+  <link rel="canonical" href="https://pas163-crypto.github.io/angela-40-invito/">
+  <title>40 anni di Angela</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Great+Vibes&family=Cinzel:wght@500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #f8f2e8;
+      --muted: #d2c3ab;
+      --gold: #e8c97a;
+      --gold-bright: #ffe7a8;
+      --scarlet: #d4183a;
+      --pine: #1a3a2e;
+      --night: #07110e;
+      --panel: rgba(10, 24, 20, 0.82);
+      --line: rgba(232, 201, 122, 0.45);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background: var(--night);
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body { overflow-x: hidden; }
+
+    /* ===== BUSTA / INTRO ===== */
+    .gate {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 20%, rgba(212, 24, 58, 0.35), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(26, 58, 46, 0.8), transparent 50%),
+        linear-gradient(165deg, #0c1a16 0%, #132820 45%, #0a1410 100%);
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+
+    .gate.is-open {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .envelope {
+      width: min(340px, 88vw);
+      text-align: center;
+      animation: float-in 1s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .envelope-card {
+      position: relative;
+      padding: 42px 28px 32px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(160deg, rgba(255,255,255,0.08), transparent 40%),
+        linear-gradient(180deg, #1c342c 0%, #12241e 100%);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .envelope-card::before,
+    .envelope-card::after {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--gold);
+      opacity: 0.7;
+    }
+
+    .envelope-card::before { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+    .envelope-card::after { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+    .wax {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #ff5a72, #d4183a 55%, #8a0f26 100%);
+      box-shadow:
+        0 0 0 4px rgba(232, 201, 122, 0.35),
+        0 0 40px rgba(212, 24, 58, 0.45);
+      display: grid;
+      place-items: center;
+      animation: wax-pulse 2.8s ease-in-out infinite;
+    }
+
+    .wax svg { width: 34px; height: 34px; }
+
+    .envelope h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(48px, 14vw, 64px);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 6px;
+      background: linear-gradient(180deg, #fff, #e8c97a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .envelope .sub {
+      font-family: Cinzel, Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+      padding-left: 0.38em;
+    }
+
+    .open-btn {
+      appearance: none;
+      border: 1px solid var(--gold);
+      background: linear-gradient(180deg, #e8c97a, #c9a14e);
+      color: #1a1208;
+      font-family: Cinzel, Georgia, serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 30px rgba(232, 201, 122, 0.25);
+    }
+
+    .open-btn:hover,
+    .open-btn:focus-visible {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 36px rgba(232, 201, 122, 0.4);
+      outline: none;
+    }
+
+    .envelope .hint {
+      margin-top: 14px;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* ===== INVITO ===== */
+    .invite {
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(24px) scale(0.98);
+      transition: opacity 0.9s ease 0.15s, transform 0.9s cubic-bezier(.2,.8,.2,1) 0.15s;
+      pointer-events: none;
+    }
+
+    body.is-revealed .invite {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+
+    .sky {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(212, 24, 58, 0.4), transparent 55%),
+        radial-gradient(ellipse 50% 35% at 90% 20%, rgba(232, 201, 122, 0.16), transparent 50%),
+        radial-gradient(ellipse 45% 40% at 5% 75%, rgba(26, 80, 60, 0.45), transparent 55%),
+        radial-gradient(circle at 50% 120%, rgba(212, 24, 58, 0.22), transparent 45%),
+        linear-gradient(180deg, #07110e 0%, #0d1c18 50%, #0a1412 100%);
+    }
+
+    .sky::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(1.5px 1.5px at 10% 15%, rgba(255,255,255,.75), transparent),
+        radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,.5), transparent),
+        radial-gradient(1.4px 1.4px at 70% 18%, rgba(255,255,255,.7), transparent),
+        radial-gradient(1px 1px at 88% 55%, rgba(255,255,255,.45), transparent),
+        radial-gradient(1.2px 1.2px at 40% 70%, rgba(255,255,255,.55), transparent),
+        radial-gradient(1px 1px at 60% 32%, rgba(255,255,255,.5), transparent);
+      animation: twinkle 5s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    #snow, #spark {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    #spark { z-index: 40; }
+
+    .wrap {
+      position: relative;
+      z-index: 3;
+      width: min(560px, 100%);
+      margin: 0 auto;
+      padding: 20px 16px calc(36px + var(--safe-bottom));
+    }
+
+    .hero {
+      text-align: center;
+      padding: 8px 0 18px;
+    }
+
+    .eyebrow {
+      font-family: Cinzel, Georgia, serif;
+      font-size: clamp(10px, 2.6vw, 12px);
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      padding-left: 0.36em;
+      text-shadow: 0 0 20px rgba(232, 201, 122, 0.35);
+    }
+
+    .wreath-stage {
+      position: relative;
+      width: min(320px, 86vw);
+      height: min(320px, 86vw);
+      margin: 0 auto 8px;
+      overflow: visible;
+    }
+
+    .wreath {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.35));
+      animation: wreath-spin 80s linear infinite;
+    }
+
+    .wreath-inner {
+      position: absolute;
+      inset: 24%;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      overflow: visible;
+      padding: 8px 6px 10px;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(212, 24, 58, 0.32), transparent 65%),
+        radial-gradient(circle at 50% 50%, rgba(8, 18, 14, 0.72), rgba(8, 18, 14, 0.35) 72%);
+      box-shadow:
+        inset 0 0 40px rgba(232, 201, 122, 0.08),
+        0 0 50px rgba(212, 24, 58, 0.2);
+    }
+
+    .age-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+    }
+
+    .age {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(72px, 22vw, 96px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      padding-bottom: 0.04em;
+      background: linear-gradient(175deg, #fff6d8 5%, #ffe08a 30%, #d4183a 78%, #7a1024 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 12px 24px rgba(212, 24, 58, 0.45));
+    }
+
+    .anni {
+      margin-top: 4px;
+      font-family: Cinzel, Georgia, serif;
+      font-size: clamp(11px, 2.8vw, 13px);
+      letter-spacing: 0.46em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      padding-left: 0.46em;
+      line-height: 1.2;
+    }
+
+    .name {
+      position: relative;
+      z-index: 3;
+      margin-top: 18px;
+      padding: 0.18em 0.1em 0.08em;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(64px, 18vw, 92px);
+      line-height: 1.2;
+      overflow: visible;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f2e8 45%, #e8c97a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 10px 28px rgba(0,0,0,0.5));
+    }
+
+    .tagline {
+      max-width: 28ch;
+      margin: 8px auto 0;
+      font-size: clamp(19px, 4.8vw, 23px);
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .baubles {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 16px 0 6px;
+    }
+
+    .bauble {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #ff8a9a, #d4183a 70%);
+      box-shadow: 0 0 12px rgba(212, 24, 58, 0.5);
+    }
+
+    .bauble.gold {
+      background: radial-gradient(circle at 35% 30%, #fff0c2, #e8c97a 70%);
+      box-shadow: 0 0 12px rgba(232, 201, 122, 0.55);
+    }
+
+    .bauble.pine {
+      background: radial-gradient(circle at 35% 30%, #6db38a, #1f5a42 70%);
+      box-shadow: 0 0 12px rgba(45, 120, 90, 0.45);
+    }
+
+    .panel {
+      position: relative;
+      margin-top: 10px;
+      padding: 20px 14px 16px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.07), transparent 32%),
+        var(--panel);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 28px 64px rgba(0,0,0,0.42);
+      overflow: hidden;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,231,168,0.08), transparent);
+      animation: sheen 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .panel-title {
+      font-family: Cinzel, Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 12px;
+      padding-left: 0.32em;
+    }
+
+    .action {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 13px 12px;
+      margin: 0 0 9px;
+      border: 1px solid rgba(232, 201, 122, 0.22);
+      background: rgba(5, 14, 12, 0.5);
+      color: inherit;
+      text-decoration: none;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      font: inherit;
+      position: relative;
+      z-index: 1;
+    }
+
+    .action:hover,
+    .action:focus-visible {
+      border-color: rgba(232, 201, 122, 0.8);
+      background: rgba(232, 201, 122, 0.1);
+      box-shadow: 0 0 22px rgba(232, 201, 122, 0.12);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .action-ico {
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--gold-bright);
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.18), transparent 50%),
+        rgba(232, 201, 122, 0.1);
+    }
+
+    .action-ico svg { width: 20px; height: 20px; }
+    .action-copy { min-width: 0; flex: 1; }
+
+    .action-label {
+      font-family: Cinzel, Georgia, serif;
+      font-size: 9px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+
+    .action-main {
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .action-sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .action-hint {
+      font-family: Cinzel, Georgia, serif;
+      font-size: 8px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(232, 201, 122, 0.85);
+      white-space: nowrap;
+    }
+
+    .rsvp {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(232, 201, 122, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .rsvp h2 {
+      font-family: "Great Vibes", cursive;
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .rsvp > p {
+      text-align: center;
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .rsvp-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 420px) {
+      .rsvp-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .rsvp-btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(5, 14, 12, 0.55);
+      color: var(--ink);
+      padding: 14px 8px;
+      cursor: pointer;
+      font-family: Cinzel, Georgia, serif;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .rsvp-btn strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .rsvp-btn.yes {
+      border-color: rgba(212, 24, 58, 0.7);
+      background: linear-gradient(180deg, rgba(212, 24, 58, 0.55), rgba(212, 24, 58, 0.18));
+      box-shadow: 0 0 26px rgba(212, 24, 58, 0.28);
+    }
+
+    .rsvp-btn:hover,
+    .rsvp-btn:focus-visible {
+      transform: translateY(-2px) scale(1.02);
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .footer {
+      margin-top: 22px;
+      text-align: center;
+      color: rgba(210, 195, 171, 0.7);
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(20px + var(--safe-bottom));
+      transform: translateX(-50%) translateY(16px);
+      z-index: 60;
+      max-width: min(90vw, 420px);
+      padding: 12px 16px;
+      background: #12231e;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 16px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @keyframes float-in {
+      from { opacity: 0; transform: translateY(28px) scale(0.96); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @keyframes wax-pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 4px rgba(232,201,122,0.35), 0 0 40px rgba(212,24,58,0.45); }
+      50% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(232,201,122,0.45), 0 0 55px rgba(212,24,58,0.6); }
+    }
+
+    @keyframes wreath-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes sheen {
+      0% { left: -50%; }
+      40%, 100% { left: 120%; }
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      #snow, #spark { display: none; }
+      .wreath { animation: none; }
+      .gate { transition: none; }
+      .invite { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <canvas id="spark" aria-hidden="true"></canvas>
+
+  <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <div class="envelope">
+      <div class="envelope-card">
+        <div class="wax" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 6 L22.4 14.2 L31 14.2 L24.1 19.2 L26.6 27.4 L20 22.4 L13.4 27.4 L15.9 19.2 L9 14.2 L17.6 14.2 Z" fill="#ffe7a8"/>
+          </svg>
+        </div>
+        <h1 id="gate-title">Angela</h1>
+        <p class="sub">Hai ricevuto un invito</p>
+        <button class="open-btn" id="open-btn" type="button">Apri l’invito</button>
+        <p class="hint">tocca per entrare nella festa</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="invite" id="invite">
+    <main class="wrap">
+      <header class="hero">
+        <p class="eyebrow">La settimana prima di Natale</p>
+
+        <div class="wreath-stage">
+          <svg class="wreath" viewBox="0 0 340 340" aria-hidden="true">
+            <defs>
+              <radialGradient id="berry" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#ff7a8c"/>
+                <stop offset="100%" stop-color="#b01028"/>
+              </radialGradient>
+              <radialGradient id="goldb" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#fff1c0"/>
+                <stop offset="100%" stop-color="#d4a84a"/>
+              </radialGradient>
+            </defs>
+            <!-- anello di base -->
+            <circle cx="170" cy="170" r="152" fill="none" stroke="#1f5a42" stroke-width="22" opacity="0.55"/>
+            <circle cx="170" cy="170" r="152" fill="none" stroke="#2f7a58" stroke-width="8" opacity="0.7"/>
+            <!-- foglie più esterne, lontano dal 40 -->
+            <g fill="#2a6b4c" stroke="#3d8f66" stroke-width="0.8">
+              <g id="leaf-ring">
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(0 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(15 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(30 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(45 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(60 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(75 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(90 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(105 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(120 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(135 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(150 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(165 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(180 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(195 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(210 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(225 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(240 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(255 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(270 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(285 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(300 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(315 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(330 170 170)"/>
+                <ellipse cx="170" cy="18" rx="9" ry="16" transform="rotate(345 170 170)"/>
+              </g>
+            </g>
+            <!-- bacche rosse -->
+            <g>
+              <circle cx="170" cy="30" r="5" fill="url(#berry)"/>
+              <circle cx="240" cy="48" r="4.5" fill="url(#berry)"/>
+              <circle cx="292" cy="100" r="5" fill="url(#berry)"/>
+              <circle cx="310" cy="170" r="4.5" fill="url(#berry)"/>
+              <circle cx="292" cy="240" r="5" fill="url(#berry)"/>
+              <circle cx="240" cy="292" r="4.5" fill="url(#berry)"/>
+              <circle cx="170" cy="310" r="5" fill="url(#berry)"/>
+              <circle cx="100" cy="292" r="4.5" fill="url(#berry)"/>
+              <circle cx="48" cy="240" r="5" fill="url(#berry)"/>
+              <circle cx="30" cy="170" r="4.5" fill="url(#berry)"/>
+              <circle cx="48" cy="100" r="5" fill="url(#berry)"/>
+              <circle cx="100" cy="48" r="4.5" fill="url(#berry)"/>
+            </g>
+            <!-- palline oro -->
+            <g>
+              <circle cx="205" cy="36" r="4" fill="url(#goldb)"/>
+              <circle cx="268" cy="72" r="3.5" fill="url(#goldb)"/>
+              <circle cx="304" cy="135" r="4" fill="url(#goldb)"/>
+              <circle cx="304" cy="205" r="3.5" fill="url(#goldb)"/>
+              <circle cx="268" cy="268" r="4" fill="url(#goldb)"/>
+              <circle cx="205" cy="304" r="3.5" fill="url(#goldb)"/>
+              <circle cx="135" cy="304" r="4" fill="url(#goldb)"/>
+              <circle cx="72" cy="268" r="3.5" fill="url(#goldb)"/>
+              <circle cx="36" cy="205" r="4" fill="url(#goldb)"/>
+              <circle cx="36" cy="135" r="3.5" fill="url(#goldb)"/>
+              <circle cx="72" cy="72" r="4" fill="url(#goldb)"/>
+              <circle cx="135" cy="36" r="3.5" fill="url(#goldb)"/>
+            </g>
+            <!-- fiocco in alto -->
+            <g transform="translate(170, 8)">
+              <path d="M0 18 C -18 4, -34 8, -28 20 C -22 14, -8 16, 0 24 C 8 16, 22 14, 28 20 C 34 8, 18 4, 0 18 Z" fill="#d4183a" stroke="#ffe7a8" stroke-width="0.8"/>
+              <rect x="-5" y="16" width="10" height="16" rx="2" fill="#e8c97a"/>
+            </g>
+          </svg>
+
+          <div class="wreath-inner">
+            <div class="age-block">
+              <p class="age">40</p>
+              <p class="anni">anni</p>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="name">Angela</h1>
+        <p class="tagline">Luci, brindisi e le persone che contano. Questa sera è tua — e nostra.</p>
+        <div class="baubles" aria-hidden="true">
+          <span class="bauble"></span>
+          <span class="bauble gold"></span>
+          <span class="bauble pine"></span>
+          <span class="bauble gold"></span>
+          <span class="bauble"></span>
+        </div>
+      </header>
+
+      <section class="panel" aria-label="Dettagli della festa">
+        <p class="panel-title">Salva · orientati · rispondi</p>
+
+        <a class="action" id="btn-calendar" href="#" role="button">
+          <span class="action-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          </span>
+          <span class="action-copy">
+            <span class="action-label">Data e ora</span>
+            <span class="action-main">venerdì 18 dicembre 2026</span>
+            <span class="action-sub">ore 20:00</span>
+          </span>
+          <span class="action-hint">Calendario</span>
+        </a>
+
+        <a class="action" id="btn-maps"
+           href="https://www.google.com/maps/search/?api=1&query=Giallo%20Datterino%20Corso%20Europa%20310%2080010%20Villaricca%20NA"
+           target="_blank" rel="noopener noreferrer">
+          <span class="action-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </span>
+          <span class="action-copy">
+            <span class="action-label">Dove</span>
+            <span class="action-main">Giallo Datterino</span>
+            <span class="action-sub">Corso Europa 310 · Villaricca (NA)</span>
+          </span>
+          <span class="action-hint">Naviga</span>
+        </a>
+
+        <div class="rsvp">
+          <h2>Ci sei?</h2>
+          <p>Un tocco e il messaggio parte su WhatsApp, diretto ad Angela.</p>
+          <div class="rsvp-grid">
+            <button class="rsvp-btn yes" type="button" data-rsvp="si"><strong>Ci sono</strong>Confermo</button>
+            <button class="rsvp-btn" type="button" data-rsvp="forse"><strong>Forse</strong>Ti aggiorno</button>
+            <button class="rsvp-btn" type="button" data-rsvp="no"><strong>Purtroppo no</strong>Non posso</button>
+          </div>
+        </div>
+      </section>
+
+      <p class="footer">Porta solo te stesso: il resto è festa.</p>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const CONFIG = {
+      whatsappNumber: "393923605270",
+      eventTitle: "40 anni di Angela",
+      eventDetails: "Festa per i 40 anni di Angela al Giallo Datterino.",
+      location: "Giallo Datterino, Corso Europa 310, 80010 Villaricca NA",
+      startLocal: "20261218T200000",
+      endLocal: "20261218T233000",
+      timezone: "Europe/Rome"
+    };
+
+    const gate = document.getElementById("gate");
+    const openBtn = document.getElementById("open-btn");
+    const toastEl = document.getElementById("toast");
+    let toastTimer;
+
+    function showToast(msg) {
+      toastEl.textContent = msg;
+      toastEl.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove("show"), 3200);
+    }
+
+    function openInvite() {
+      gate.classList.add("is-open");
+      document.body.classList.add("is-revealed");
+      burstConfetti(true);
+      openBtn.setAttribute("aria-expanded", "true");
+    }
+
+    openBtn.addEventListener("click", openInvite);
+
+    function buildIcs() {
+      const uid = "angela-40-" + CONFIG.startLocal + "@invito";
+      const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+      return [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Angela40//IT",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "BEGIN:VEVENT",
+        "UID:" + uid,
+        "DTSTAMP:" + stamp,
+        "DTSTART;TZID=" + CONFIG.timezone + ":" + CONFIG.startLocal,
+        "DTEND;TZID=" + CONFIG.timezone + ":" + CONFIG.endLocal,
+        "SUMMARY:" + CONFIG.eventTitle,
+        "DESCRIPTION:" + CONFIG.eventDetails,
+        "LOCATION:" + CONFIG.location,
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+    }
+
+    function googleCalendarUrl() {
+      const params = new URLSearchParams({
+        action: "TEMPLATE",
+        text: CONFIG.eventTitle,
+        dates: "20261218T190000Z/20261218T223000Z",
+        details: CONFIG.eventDetails,
+        location: CONFIG.location
+      });
+      return "https://calendar.google.com/calendar/render?" + params.toString();
+    }
+
+    document.getElementById("btn-calendar").addEventListener("click", function (e) {
+      e.preventDefault();
+      const blob = new Blob([buildIcs()], { type: "text/calendar;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "40-anni-angela.ics";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        setTimeout(function () {
+          window.open(googleCalendarUrl(), "_blank", "noopener,noreferrer");
+        }, 250);
+      }
+      showToast("Evento pronto: aprilo e salvalo in calendario.");
+    });
+
+    function burstConfetti(big) {
+      const canvas = document.getElementById("spark");
+      const ctx = canvas.getContext("2d");
+      const parts = [];
+      const colors = ["#d4183a", "#e8c97a", "#ffe7a8", "#ffffff", "#2f7a58", "#ff6b81"];
+      const n = big ? 110 : 70;
+      for (let i = 0; i < n; i++) {
+        parts.push({
+          x: canvas.width / 2,
+          y: canvas.height * (big ? 0.42 : 0.62),
+          vx: (Math.random() - 0.5) * (big ? 18 : 14),
+          vy: -Math.random() * (big ? 14 : 12) - 3,
+          g: 0.2 + Math.random() * 0.14,
+          s: 2 + Math.random() * 3.5,
+          c: colors[i % colors.length],
+          life: 1
+        });
+      }
+      let frames = 0;
+      (function tick() {
+        frames++;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        parts.forEach(function (p) {
+          p.vy += p.g;
+          p.x += p.vx;
+          p.y += p.vy;
+          p.life -= 0.014;
+          ctx.globalAlpha = Math.max(0, p.life);
+          ctx.fillStyle = p.c;
+          ctx.fillRect(p.x, p.y, p.s, p.s * 1.35);
+        });
+        ctx.globalAlpha = 1;
+        if (frames < 85) requestAnimationFrame(tick);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      })();
+    }
+
+    function openWhatsApp(kind) {
+      const messages = {
+        si: "Ciao Angela! Confermo la mia presenza ai tuoi 40 anni ❤️ Ci vediamo venerdì 18 dicembre alle 20 al Giallo Datterino.",
+        forse: "Ciao Angela! Vorrei esserci ai tuoi 40 anni: per ora metto un forse e ti aggiorno appena posso.",
+        no: "Ciao Angela! Purtroppo non riesco a esserci ai tuoi 40 anni. Ti abbraccio e ti faccio tanti auguri!"
+      };
+      if (kind === "si") burstConfetti(false);
+      window.open(
+        "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(messages[kind]),
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+
+    document.querySelectorAll("[data-rsvp]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        openWhatsApp(btn.getAttribute("data-rsvp"));
+      });
+    });
+
+    (function snow() {
+      const canvas = document.getElementById("snow");
+      const spark = document.getElementById("spark");
+      const ctx = canvas.getContext("2d");
+      let flakes = [];
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function resize() {
+        canvas.width = spark.width = window.innerWidth;
+        canvas.height = spark.height = window.innerHeight;
+        const count = Math.min(120, Math.floor(window.innerWidth / 9));
+        flakes = Array.from({ length: count }, function () {
+          return {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 2.5 + 0.5,
+            s: Math.random() * 0.9 + 0.2,
+            a: Math.random() * Math.PI * 2,
+            o: Math.random() * 0.55 + 0.2
+          };
+        });
+      }
+
+      function frame() {
+        if (reduced) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < flakes.length; i++) {
+          const f = flakes[i];
+          f.y += f.s;
+          f.x += Math.sin(f.a) * 0.45;
+          f.a += 0.012;
+          if (f.y > canvas.height + 4) { f.y = -4; f.x = Math.random() * canvas.width; }
+          ctx.beginPath();
+          ctx.fillStyle = "rgba(248,242,232," + f.o + ")";
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        requestAnimationFrame(frame);
+      }
+
+      resize();
+      window.addEventListener("resize", resize);
+      if (!reduced) requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>
